@@ -4,7 +4,7 @@
 
 #### Install Instructions
 
-1. git clone https://github.com/jannunzi/web-dev-template.git
+1. git clone https://github.com/tintin1343/web-dev-template.git
 2. cd web-dev-template
 3. npm install
 4. mongod

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TodoApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>To-Do App</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-controller="TodoController">
+            <h1>Create Todo</h1>
+            <label>Title</label>
+            <input class="form-control" type="text" name="title" value="{{todo.title}}" ng-model="todo.title"/>
+            <br>
+            <label>Description</label>
+            <textarea class="form-control" ng-model="todo.description">{{todo.description}}</textarea>
+            <br>
+            <button class="btn btn-primary" ng-click="createTodo(todo)">Create Todo</button>
+            <button class="btn btn-success" ng-click="updateToDo(todo)">UpdateTodo</button>
+
+            <h1>Todo List</h1>
+            <p ng-if="todos.length === 0">No todos added yet</p>
+            <div ng-repeat="todo in todos">
+                <a ng-click="deleteToDo(todo)" class="pull-right">
+                    <span class="glyphicon glyphicon-remove"></span></a>
+                <a ng-click="selectToDo(todo)" class="pull-right">
+                    <span class="glyphicon glyphicon-cog"></span></a>
+                <h3>{{todo.title}}</h3>
+                <p>{{todo.description}}</p>
+            </div>
+
+        </div>
+
+
+    </body>
+</html>
+
